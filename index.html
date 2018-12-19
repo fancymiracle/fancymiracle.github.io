@@ -3,9 +3,29 @@
 <html>
 <head>
 <script>
-//var url = "https://dl.dropboxusercontent.com/u/5101768/ninnababy.plist";
-var url = "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/fancymiracle/afble/master/afble.plist";
+var plistBaseURL = "itms-services://?action=download-manifest&url=https://raw.githubusercontent.com/fancymiracle/afble/master/";
+	var param1var = getQueryVariable("T");
+
+function getQueryVariable(variable) {
+  var query = window.location.search.substring(1);
+  var vars = query.split("&");
+  for (var i=0;i<vars.length;i++) {
+    var pair = vars[i].split("=");
+    if (pair[0] == variable) {
+      return pair[1];
+    }
+  }   
+}
+if(param1var == "A4N"){
+
+var url = plistBaseURL+"afble.plist";
 window.location = "itms-services://?action=download-manifest&url=" + url;
+}else if(param1var == "1420N"){
+	var url = plistBaseURL+"afble1420N.plist";
+
+window.location = "itms-services://?action=download-manifest&url=" + url;
+}
+//var url = "https://dl.dropboxusercontent.com/u/5101768/ninnababy.plist";
 </script>
 
 <title>藍芽筆測試安裝</title>
