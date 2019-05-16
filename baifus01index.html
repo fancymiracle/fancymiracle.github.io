@@ -16,10 +16,11 @@ function getQueryVariable(variable) {
     }
   }   
 }
-window.location = "itms-services://?action=download-manifest&url=" + url;
 if(param1var == "T2"){
-	url = plistBaseURL+"jchart02.plist";
+  url = plistBaseURL+"jchart02.plist";
 }
+window.location = "itms-services://?action=download-manifest&url=" + url;
+
 </script>
 
 <title></title>
